@@ -17,13 +17,24 @@ $(document).ready(function() {
     for (var i = 0; i < comicCharacters.length; i++) {
         var newButton = $('<button>').html(comicCharacters[i]); //new button
         // newButton.attr('type', 'button');
-        newButton.addClass('btn btn-primary btn-sm'); //style the button
+        newButton.addClass('btn btn-primary btn-sm charBtn'); //style the button
         // newButton.attr('id', newButton.text);
         $('.buttonHolder').append(newButton); //append the buttons to the html div with buttonHolder class
-    }
+
+    };
+    
+    
+    $('.submit').on('click', function () {
+        var newUserButton = $('#charBox').val();
+        comicCharacters.push(newUserButton);
+        // var newUserButton = $('<button>').html($('#charBox').val());
+        // newUserButton.addClass('btn btn-primary btn-sm charBtn')
+        // $('.buttonHolder').append(newUserButton);
+    });
+
 
     //when you click on a button, activate this function (make api request):
-    $('.btn').on('click', function () {
+    $('.charBtn').on('click', function () {
 
         var apiKey = "C2vxy7xUanvRx8m3rxQzrM7m200lur0y" //my personal apikey for giphy
         // console.log($(this).text());
@@ -46,12 +57,16 @@ $(document).ready(function() {
                 newGifImage.attr('src', giphyResponse.data[j].images.fixed_height.url); //add a source attribute and link/properly reference the image url
                 // newGif.append(newGifImage);
                 $(".gifHolder").prepend(newGifImage); //prepend the new images to the gifHolder div. 
-            }
+            };
 
             // $(".gifHolder").append(giphyResponse.data[0].images.fixed_height.url);
         });
 
 
-    })
+    });
+
 
 });
+
+//add rating
+//add search input

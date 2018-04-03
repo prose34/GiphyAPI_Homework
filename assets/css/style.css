@@ -13,3 +13,7 @@ button {
 img {
     margin: 10px;
 }
+
+button.submit {
+    margin: 5px 0px 0px 0px;
+}
