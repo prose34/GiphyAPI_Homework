@@ -11,9 +11,17 @@ button {
 }
 
 img {
-    margin: 10px;
+    margin: 5px 10px 10px 10px;
 }
 
 button.submit {
     margin: 5px 0px 0px 0px;
+}
+
+.newCharDiv {
+    display: inline-block;
+}
+
+p {
+    margin: 10px 0 0 10px;
 }
